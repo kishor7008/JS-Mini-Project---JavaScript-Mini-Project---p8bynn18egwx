@@ -1,1 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: rgb(170, 138, 138); */
+    /* background-color:linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%); */
+    /* background: linear-gradient(to bottom left, #33ccff 0%, #0000ff 100%); */
+    background: linear-gradient(to left, #33ccff 0%, #cc6600 100%);
+}
+
+.container {
+    position: relative;
+    /* height: 500px; */
+    background: #2f363e;
+    border-radius: 20px;
+    border-top-left-radius: 225px;
+    border-top-right-radius: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #2f363e;
+    border-radius: 50%;
+    /* box-shadow: inset 10px 50px 70px rgba(0,0,0,0.25),
+
+    inset 5 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(0,0,0,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75); */
+    border: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #2f363e;
+    border: 3px solid white;
+    border-radius: 50%;
+    z-index: 1000000;
+
+}
+
+.clock span {
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    color: white;
+    transform: rotate(calc(30deg*var(--i)));
+}
+
+.clock span b {
+    font-size: 2rem;
+    opacity: 0.25;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg*var(--i)));
+}
+.circle{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+.circle1{
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(0,0,0,0.25);
+    z-index: 9;
+}
+.circle2{
+    width: 150px;
+    z-index: 8;
+    height: 150px;
+}
+.circle i{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background-color:var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+
+    
+}
+.circle:nth-child(1) i{
+    width: 2px;
+}
+.circle:nth-child(2) i{
+    width: 6px;
+}
+.circle::before{
+    content: '';
+    top:-8.5px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--clr);
+    box-shadow: 0 0 20px var(--clr);
+}
+#time{
+margin-bottom: 40px;
+display: flex;
+padding: 10px 20px;
+font-size: 2rem;
+font-weight: 600;
+border: 2px solid rgba(0,0,0,0.5);
+border-radius: 40px;
+box-shadow: 5px 5px 10px rgba(0,0,0,0.5),
+inset 5px 5px 20px rgba(255,255,255,0.2),
+inset -5px -5px 15px rgba(0,0,0,0.75);
+}
+#time div{
+    position: relative;
+    width: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr);
+}
+#time div:nth-child(1)::after{
+    content: ':';
+    position: absolute;
+    right: -4px;
+}
+#time div:nth-child(2)::after{
+    content: ':';
+    position: absolute;
+    right: -4px;
+}
+#time div:last-child{
+    font-size:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#time div:nth-child(2)::after{
+animation: animate 1s steps(1) infinite;
+}
+@keyframes animate{
+    0%{
+        opacity: 1;
+    }50%{
+        opacity: 0;
+    }
+}
+.content{
+    color: white;
+    position: absolute;
+    top:270px;
+    left: 200px;
+}
+.content h1{
+    font-size: 6rem;
+    font-family: 'The Nautigal', cursive;
+    margin-bottom: 20px;
+    text-align: center;
+    color:#2f3e51;
+    
+}
+
+.content p{
+    font-size: 1.8rem;
+    
+    /* font-family: 'The Nautigal', cursive; */
+    font-family: 'Yeseva One', cursive;
+    color: #2e4c6e;
+}
